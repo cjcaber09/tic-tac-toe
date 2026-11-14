@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { RotateCcw, Trophy } from "lucide-react";
+import { Pencil, RotateCcw, Trophy } from "lucide-react";
 
 import { EmojiPicker } from "@/components/emoji-picker";
 import { Button } from "@/components/ui/button";
@@ -62,7 +62,7 @@ export default function Home() {
       <Card className="w-full max-w-sm">
         <CardHeader className="text-center">
           <CardTitle className="text-3xl font-bold tracking-tight">Tic-Tac-Toe</CardTitle>
-          <CardDescription>Two players, one board. Tap your emoji to change it.</CardDescription>
+          <CardDescription>Two players, one board. Get three in a row to win.</CardDescription>
         </CardHeader>
 
         <CardContent className="flex flex-col items-center gap-5">
@@ -96,6 +96,11 @@ export default function Home() {
               )
             )}
           </section>
+
+          <p className="text-muted-foreground -mt-3 flex items-center gap-1.5 text-center text-xs">
+            <Pencil className="size-3 shrink-0" aria-hidden />
+            Tap a player&apos;s emoji above to change their mark, anytime.
+          </p>
 
           <div role="status" aria-live="polite" className="flex h-8 items-center">
             {winner ? (
